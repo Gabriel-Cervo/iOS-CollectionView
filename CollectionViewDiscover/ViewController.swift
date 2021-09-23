@@ -14,10 +14,23 @@ class ViewController: UIViewController {
     
     static let cellIdentifier = "libraryCell"
     
+    let songs = MockSongs.instance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(alertNotification(_:)), name: UIContentSizeCategory.didChangeNotification, object: nil)
+    }
+    
+    @objc func alertNotification(_ notification: Notification) {
+        self.collectionView.collectionViewLayout.invalidateLayout()
+        collectionView.visibleCells.forEach { cell in
+            if let cell = cell as? ListenAgainCell {
+                cell.relayout()
+            }
+        }
     }
 }
 
@@ -34,6 +47,8 @@ extension ViewController: UICollectionViewDataSource {
         switch section {
         case .musicLibrary:
             return 2
+        case .listenAgain:
+            return 1
         default:
             return 0
         }
@@ -47,6 +62,10 @@ extension ViewController: UICollectionViewDataSource {
             
             cell.setup(leftImageName: "default1", leftLabel: "Pop", rightImageName: "default2", rightLabel: "Rock")
             
+            return cell
+        case .listenAgain:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListenAgain", for: indexPath) as! ListenAgainCell
+
             return cell
         default:
             return UICollectionViewCell()
@@ -67,10 +86,16 @@ extension ViewController: UICollectionViewDelegate {
 extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let section = sections[indexPath.section]
-        
+    
         switch section {
         case .musicLibrary:
-            return CGSize(width: collectionView.frame.width - 32, height: 58)
+            return CGSize(width: collectionView.frame.width - 32, height: 50)
+        case .listenAgain:
+            let songHeight = songs.map { song in
+                ListenAgainCell.calculateFullHeight(text: song.name, screenWidth: collectionView.frame.width)
+            }.max() ?? 0
+            
+            return CGSize(width: collectionView.frame.width, height: songHeight + 1)
         default:
             return .zero
         }

@@ -109,14 +109,83 @@
                                             <outlet property="rightview" destination="HHx-ef-3YN" id="iPp-FP-bYt"/>
                                         </connections>
                                     </collectionViewCell>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="ListenAgain" id="j4N-rn-dut" customClass="ListenAgainCell" customModule="CollectionViewDiscover" customModuleProvider="target">
-                                        <rect key="frame" x="37" y="61" width="340" height="120"/>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ListenAgain" id="j4N-rn-dut" customClass="ListenAgainCell" customModule="CollectionViewDiscover" customModuleProvider="target">
+                                        <rect key="frame" x="33" y="61" width="348" height="280"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="lgD-pg-nfP">
-                                            <rect key="frame" x="0.0" y="0.0" width="340" height="120"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="348" height="280"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="1000" verticalCompressionResistancePriority="1000" text="Listen Again" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sGd-8T-zos">
+                                                    <rect key="frame" x="16" y="0.0" width="316" height="30"/>
+                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2NW-vv-3eU">
+                                                    <rect key="frame" x="0.0" y="38" width="348" height="242"/>
+                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="WF4-P3-oBY">
+                                                        <size key="itemSize" width="213" height="174"/>
+                                                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                    </collectionViewFlowLayout>
+                                                    <cells>
+                                                        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="listenSongCell" id="xYm-ss-6gP" customClass="ListenAgainSongCell" customModule="CollectionViewDiscover" customModuleProvider="target">
+                                                            <rect key="frame" x="0.0" y="34" width="213" height="174"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="6D5-aW-9mQ">
+                                                                <rect key="frame" x="0.0" y="0.0" width="213" height="174"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w7l-FV-QkD">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="213" height="170"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" secondItem="w7l-FV-QkD" secondAttribute="height" multiplier="1:1" id="ltN-kX-XO8"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="98h-KC-6Nr">
+                                                                        <rect key="frame" x="0.0" y="174" width="213" height="0.0"/>
+                                                                        <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                                                        <color key="textColor" systemColor="systemGrayColor"/>
+                                                                        <nil key="highlightedColor"/>
+                                                                    </label>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstItem="98h-KC-6Nr" firstAttribute="top" secondItem="w7l-FV-QkD" secondAttribute="bottom" constant="4" id="001-AU-9bn"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="98h-KC-6Nr" secondAttribute="trailing" id="1Q5-CE-K0H"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="w7l-FV-QkD" secondAttribute="trailing" id="4fi-WW-Dim"/>
+                                                                    <constraint firstItem="98h-KC-6Nr" firstAttribute="leading" secondItem="6D5-aW-9mQ" secondAttribute="leading" id="UOo-cx-Oo5"/>
+                                                                    <constraint firstItem="w7l-FV-QkD" firstAttribute="leading" secondItem="6D5-aW-9mQ" secondAttribute="leading" id="UdG-KP-A1d"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="98h-KC-6Nr" secondAttribute="bottom" id="dUQ-ZB-38G"/>
+                                                                    <constraint firstItem="w7l-FV-QkD" firstAttribute="top" secondItem="6D5-aW-9mQ" secondAttribute="top" id="pC3-bS-jKf"/>
+                                                                </constraints>
+                                                            </collectionViewCellContentView>
+                                                            <size key="customSize" width="213" height="174"/>
+                                                            <connections>
+                                                                <outlet property="songImage" destination="w7l-FV-QkD" id="Al2-lt-TUn"/>
+                                                                <outlet property="songLabel" destination="98h-KC-6Nr" id="gOf-H5-gRA"/>
+                                                            </connections>
+                                                        </collectionViewCell>
+                                                    </cells>
+                                                </collectionView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="2NW-vv-3eU" secondAttribute="bottom" id="GoS-kh-6U3"/>
+                                                <constraint firstAttribute="trailing" secondItem="sGd-8T-zos" secondAttribute="trailing" constant="16" id="N7H-Sc-w5p"/>
+                                                <constraint firstItem="2NW-vv-3eU" firstAttribute="top" secondItem="sGd-8T-zos" secondAttribute="bottom" constant="8" id="SS2-n4-ZGw"/>
+                                                <constraint firstItem="sGd-8T-zos" firstAttribute="leading" secondItem="lgD-pg-nfP" secondAttribute="leading" constant="16" id="TF8-kk-ARv"/>
+                                                <constraint firstItem="2NW-vv-3eU" firstAttribute="leading" secondItem="lgD-pg-nfP" secondAttribute="leading" id="cZW-0g-uC1"/>
+                                                <constraint firstItem="sGd-8T-zos" firstAttribute="top" secondItem="lgD-pg-nfP" secondAttribute="top" id="jJY-zw-juk"/>
+                                                <constraint firstAttribute="trailing" secondItem="2NW-vv-3eU" secondAttribute="trailing" id="y80-pu-0B0"/>
+                                            </constraints>
                                         </collectionViewCellContentView>
-                                        <size key="customSize" width="340" height="120"/>
+                                        <size key="customSize" width="348" height="280"/>
+                                        <connections>
+                                            <outlet property="label" destination="sGd-8T-zos" id="3i7-eh-qhS"/>
+                                            <outlet property="listenAgainCollection" destination="2NW-vv-3eU" id="t5Z-bm-AFe"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
@@ -143,6 +212,9 @@
         <image name="default1" width="633" height="422"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

@@ -16,6 +16,7 @@
 		845B2FF926FBAAE6009EA07F /* Discovery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B2FF826FBAAE6009EA07F /* Discovery.swift */; };
 		845B2FFB26FBABAE009EA07F /* LibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845B2FFA26FBABAE009EA07F /* LibraryCell.swift */; };
 		84A7B71726FCE2000031EB2B /* ListenAgainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7B71626FCE2000031EB2B /* ListenAgainCell.swift */; };
+		84A7B71926FD0BD30031EB2B /* ListenAgainSongCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A7B71826FD0BD30031EB2B /* ListenAgainSongCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		845B2FF826FBAAE6009EA07F /* Discovery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Discovery.swift; sourceTree = "<group>"; };
 		845B2FFA26FBABAE009EA07F /* LibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCell.swift; sourceTree = "<group>"; };
 		84A7B71626FCE2000031EB2B /* ListenAgainCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenAgainCell.swift; sourceTree = "<group>"; };
+		84A7B71826FD0BD30031EB2B /* ListenAgainSongCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListenAgainSongCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +74,7 @@
 				845B2FF226FBA986009EA07F /* Info.plist */,
 				845B2FF826FBAAE6009EA07F /* Discovery.swift */,
 				845B2FFA26FBABAE009EA07F /* LibraryCell.swift */,
+				84A7B71826FD0BD30031EB2B /* ListenAgainSongCell.swift */,
 			);
 			path = CollectionViewDiscover;
 			sourceTree = "<group>";
@@ -148,6 +151,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				845B2FFB26FBABAE009EA07F /* LibraryCell.swift in Sources */,
+				84A7B71926FD0BD30031EB2B /* ListenAgainSongCell.swift in Sources */,
 				845B2FE926FBA983009EA07F /* ViewController.swift in Sources */,
 				845B2FE526FBA983009EA07F /* AppDelegate.swift in Sources */,
 				845B2FF926FBAAE6009EA07F /* Discovery.swift in Sources */,
