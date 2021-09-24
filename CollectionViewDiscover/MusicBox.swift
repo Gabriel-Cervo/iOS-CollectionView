@@ -15,6 +15,8 @@ class MusicBox: UIView {
     let nibName = "MusicBox"
     var contentView: UIView?
     
+    static let borderColor = UIColor.lightGray.withAlphaComponent(0.4)
+    
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -34,15 +36,14 @@ class MusicBox: UIView {
     }
     
     func setup(song: Song) {
-        let borderColor = UIColor.lightGray
         
         contentView?.layer.cornerRadius = 4
         contentView?.layer.borderWidth = 1
-        contentView?.layer.borderColor = borderColor.cgColor
+        contentView?.layer.borderColor = Self.borderColor.cgColor
         contentView?.layer.masksToBounds = true
         
         self.imageView.image = song.image
         self.musicLabel.text = song.name
-        self.artistLabel.text = song.artist
+        self.artistLabel.text = song.artist ?? "Unknown"
     }
 }

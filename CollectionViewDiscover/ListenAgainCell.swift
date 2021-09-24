@@ -19,7 +19,7 @@ struct Song {
 }
 
 struct MockSongs {
-    static let instance = [Song(imageName: "default1", name: "Older"), Song(imageName: "default2", name: "Rock"), Song(imageName: "default1", name: "Older"), Song(imageName: "default2", name: "Rock")]
+    static let instance = [Song(imageName: "default1", name: "Older", artist: "Alec Benjamin"), Song(imageName: "default2", name: "Rock"), Song(imageName: "default1", name: "Older", artist: "Alec Benjamin"), Song(imageName: "default2", name: "Rock")]
 }
 
 class ListenAgainCell: UICollectionViewCell {

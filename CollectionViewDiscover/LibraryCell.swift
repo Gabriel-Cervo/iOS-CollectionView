@@ -18,17 +18,15 @@ class LibraryCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        let borderColor = UIColor.lightGray
-        
+                
         leftView.layer.cornerRadius = 4
         leftView.layer.borderWidth = 1
-        leftView.layer.borderColor = borderColor.cgColor
+        leftView.layer.borderColor = MusicBox.borderColor.cgColor
         leftView.layer.masksToBounds = true
         
         rightview.layer.cornerRadius = 4
         rightview.layer.borderWidth = 1
-        rightview.layer.borderColor = borderColor.cgColor
+        rightview.layer.borderColor = MusicBox.borderColor.cgColor
         rightview.layer.masksToBounds = true
   
     }

@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     
     static let cellIdentifier = "libraryCell"
     static let forYouCellIdentifier = "forYou"
+    static let recentlyReleasedIdentifier = "recentlyReleased"
     
     let songs = MockSongs.instance
     
@@ -72,8 +73,12 @@ extension ViewController: UICollectionViewDataSource {
             cell.secondMusicBox.setup(song: songs[1])
             
             return cell
-        default:
-            return UICollectionViewCell()
+        case .recentlyReleased:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Self.recentlyReleasedIdentifier, for: indexPath) as! RecentlyReleasedCell
+            
+            cell.setup(song: songs[0])
+        
+            return cell
         }
     }
 }
@@ -103,8 +108,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
             return CGSize(width: collectionView.frame.width, height: songHeight + 1)
         case .forYou:
             return CGSize(width: collectionView.frame.width - 32, height: 232)
-        default:
-            return .zero
+        case .recentlyReleased:
+            return CGSize(width: collectionView.frame.width - 32, height: 140)
         }
     }
     
