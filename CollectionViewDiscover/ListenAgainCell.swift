@@ -11,6 +11,7 @@ import UIKit
 struct Song {
     var imageName: String
     var name: String
+    var artist: String? = nil
     
     var image: UIImage? {
         UIImage(named: self.imageName)
@@ -36,6 +37,7 @@ class ListenAgainCell: UICollectionViewCell {
     var songs: [Song] = MockSongs.instance
     
     override func awakeFromNib() {
+        super.awakeFromNib()
         listenAgainCollection.dataSource = self
         listenAgainCollection.delegate = self
         label.font = Self.listenAgainLabel

@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     let sections: [Discovery] = [.musicLibrary, .listenAgain, .forYou, .recentlyReleased]
     
     static let cellIdentifier = "libraryCell"
+    static let forYouCellIdentifier = "forYou"
     
     let songs = MockSongs.instance
     
@@ -47,10 +48,8 @@ extension ViewController: UICollectionViewDataSource {
         switch section {
         case .musicLibrary:
             return 2
-        case .listenAgain:
-            return 1
         default:
-            return 0
+            return 1
         }
     }
     
@@ -66,6 +65,12 @@ extension ViewController: UICollectionViewDataSource {
         case .listenAgain:
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ListenAgain", for: indexPath) as! ListenAgainCell
 
+            return cell
+        case .forYou:
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Self.forYouCellIdentifier, for: indexPath) as! ForYouCell
+            cell.firstMusicBox.setup(song: songs[0])
+            cell.secondMusicBox.setup(song: songs[1])
+            
             return cell
         default:
             return UICollectionViewCell()
@@ -96,6 +101,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
             }.max() ?? 0
             
             return CGSize(width: collectionView.frame.width, height: songHeight + 1)
+        case .forYou:
+            return CGSize(width: collectionView.frame.width - 32, height: 232)
         default:
             return .zero
         }
@@ -107,6 +114,8 @@ extension ViewController: UICollectionViewDelegateFlowLayout {
         switch section {
         case .musicLibrary:
             return UIEdgeInsets(top: 24, left: 16, bottom: 12, right: 16)
+        case .forYou:
+            return UIEdgeInsets(top: 24, left: 16, bottom: 36, right: 16)
         default:
             return .zero
         }
